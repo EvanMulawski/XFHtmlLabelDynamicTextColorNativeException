@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:abstractions="clr-namespace:LabelHtml.Forms.Plugin.Abstractions;assembly=HtmlLabel.Forms.Plugin"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- Comment out the HtmlLabel - does not crash when entering background -->
+        <abstractions:HtmlLabel Text="HtmlLabel Test" TextColor="{DynamicResource TestColor}" />
+        
+        <Label Text="Test" TextColor="{DynamicResource TestColor}" />
+        <Label TextColor="{DynamicResource TestColor}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="This is a" />
+                        <Span Text=" Formatted " TextColor="{DynamicResource TestColor2}" />
+                        <Span Text="String" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
